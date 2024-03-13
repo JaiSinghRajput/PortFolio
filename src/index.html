@@ -9,9 +9,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-slate-300 dark:bg-slate-800">
+<body class="bg-slate-300 dark:bg-slate-800 dark">
     <nav
-        class="dark:bg-black bg-slate-800 md:w-3/4 w-11/12 mx-auto text-gray-300 text-3xl rounded-md mt-4 px-4 flex p-y-2 fixed left-[5%] md:left-[12%]">
+        class="z-50 dark:bg-black h-[10vh] bg-slate-800 md:w-3/4 w-11/12 mx-auto text-gray-300 text-3xl rounded-md mt-4 px-4 flex p-y-2 fixed left-[5%] md:left-[12%] top-0">
         <div class="w-2/3 md:1/2">
             <a href="#"><img width="120px" class="invert items-center" src="../static/sign.png" alt=""></a>
         </div>
@@ -21,12 +21,47 @@
             <span class="hidden md:block"><a href="#"><i class="fa-solid fa-arrow-down-long">Cv</i></a></span>
         </div>
     </nav>
-    <section>
-        <div class="flex max-w-[99%] m-auto h-dvh">
-        </div>
-        <div class="flex max-w-[99%] m-auto h-dvh">
-        </div>
-    </section>
+
+    <div class="text-black dark:text-white">
+        <section class="dark:bg-gray-800 py-8 px-4 mt-[15vh] rounded-lg shadow-md">
+            <h1 class="text-4xl font-bold mb-3 inline-block">Jai Singh Rajput<svg class="inline-block pb-1"
+                    xmlns="http://www.w3.org/2000/svg" x=".5px" y="0px" width="40" height="35" viewBox="0 0 48 48">
+                    <polygon fill="#42a5f5"
+                        points="29.62,3 33.053,8.308 39.367,8.624 39.686,14.937 44.997,18.367 42.116,23.995 45,29.62 39.692,33.053 39.376,39.367 33.063,39.686 29.633,44.997 24.005,42.116 18.38,45 14.947,39.692 8.633,39.376 8.314,33.063 3.003,29.633 5.884,24.005 3,18.38 8.308,14.947 8.624,8.633 14.937,8.314 18.367,3.003 23.995,5.884">
+                    </polygon>
+                    <polygon fill="#fff"
+                        points="21.396,31.255 14.899,24.76 17.021,22.639 21.428,27.046 30.996,17.772 33.84,19.926">
+                    </polygon>
+                </svg></h1>
+            <p>Bio: <span id="bio"></span></p>
+            <div id="statusOverview" class="flex flex-warp justify-center items-center flex-col md:flex-row">
+                <div
+                    class="rounded-lg p-6 shadow-md transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <h3 class="text-xl font-semibold mb-4">Repositories</h3>
+                    <p id="repositories" class="text-gray-700">Loading...</p>
+                </div>
+                <div
+                    class="rounded-lg p-6 shadow-md transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://github-readme-streak-stats.herokuapp.com?user=JaiSinghRajput&theme=highcontrast&fire=DD5523&ring=E1397B&sideLabels=65FDF6&currStreakLabel=F9D659&&background=141320" width="100%" />
+                </div>
+                <div
+                    class="rounded-lg p-6 shadow-md transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://bad-apple-github-readme.vercel.app/api?show_bg=1&username=JaiSinghRajput&show_icons=true&theme=radical" width="100%" />
+                </div>
+                <div
+                    class="rounded-lg p-6 shadow-md transition duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JaiSinghRajput&hide=dockerfile&theme=radical" width="100%">
+                </div>
+            </div>
+        </section>
+        <section id="repoSection" class="mt-8 ">
+            <h2 class="text-3xl mb-4">My Repositories</h2>
+            <div id="repoCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+            <div id="readmeContainer"></div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
