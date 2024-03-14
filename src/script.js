@@ -15,7 +15,7 @@ function generateRepoCards(repos) {
 
     repos.forEach(repo => {
         const card = document.createElement('div');
-        card.classList.add('rounded-lg', 'p-6', 'shadow-md', 'flex', 'flex-col', 'justify-between', 'transition', 'duration-300', 'transform', 'hover:scale-105', 'hover:shadow-xl');
+        card.classList.add('rounded-lg', 'p-6', 'shadow-md', 'flex', 'flex-col', 'justify-between', 'transition', 'duration-300', 'transform', 'hover:scale-105', 'hover:shadow-xl' , 'bg-slate-400','bg-opacity-[0.3]');
 
         const title = document.createElement('h3');
         title.classList.add('text-xl', 'font-semibold', 'mb-4', 'text-blue-500', 'cursor-pointer', 'hover:text-blue-600');
@@ -23,7 +23,7 @@ function generateRepoCards(repos) {
         title.addEventListener('click', () => openRepo(repo));
 
         const description = document.createElement('p');
-        description.classList.add('text-gray-700', 'mb-6');
+        description.classList.add('text-gray-700', 'mb-6','dark:text-slate-200');
         description.textContent = repo.description || 'No description provided.';
 
         const button = document.createElement('button');
@@ -58,6 +58,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const repos = await fetchRepoData();
     generateRepoCards(repos);
 });
+
 async function fetchProfileInfo() {
     try {
         const response = await fetch('https://api.github.com/users/JaiSinghRajput');
@@ -74,10 +75,24 @@ async function updateProfileInfo() {
         const profileInfo = await fetchProfileInfo();
         document.getElementById('bio').textContent = profileInfo.bio || 'Not provided';
         document.getElementById('repositories').textContent = profileInfo.public_repos || 'Not provided';
+        document.getElementById('following').textContent = profileInfo.following || 'Not provided';
+        document.getElementById('followers').textContent = profileInfo.followers || '10K';
+
+        const profilePic = document.createElement('img');
+        profilePic.src = profileInfo.avatar_url;
+        const profilePicContainer = document.getElementById('profilePicContainer');
+        profilePicContainer.innerHTML = '';
+        profilePicContainer.appendChild(profilePic);
     } catch (error) {
         console.error('Error updating profile info:', error);
     }
 }
 
-// Update profile info on page load
+toogleSection = (section)=>{
+let Container = document.getElementById(`${section}`)
+Container.classList.toggle('hidden')
+}
+
+document.getElementById('Projectsbtn').addEventListener('click',()=>toogleSection('Projects'))
+document.getElementById('Statusbtn').addEventListener('click',()=>toogleSection('Status'))
 window.addEventListener('DOMContentLoaded', updateProfileInfo);
