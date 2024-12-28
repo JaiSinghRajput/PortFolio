@@ -1,0 +1,470 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #121212;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #1e90ff;
+}
+
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    background: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+.download-cv {
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.download-cv:hover {
+    background-color: #0d6efd;
+}
+
+.hero {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+}
+
+.hero .text-content {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.blob-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+}
+
+.blob {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #1e90ff, #121212);
+    border-radius: 60% 40% 40% 60% / 60% 50% 50% 40%;
+    animation: blobMorph 8s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes blobMorph {
+
+    0%,
+    100% {
+        border-radius: 60% 40% 40% 60% / 60% 50% 50% 40%;
+    }
+
+    50% {
+        border-radius: 50% 50% 60% 40% / 40% 60% 50% 50%;
+    }
+}
+
+.profile-image {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: url('./jai2.png') no-repeat center/cover;
+    border: 3px solid rgb(58, 178, 211);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.316);
+}
+
+.skills,
+.projects {
+    padding: 4rem 2rem;
+    background-color: #121212;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1e90ff;
+}
+
+.skills-container,
+.projects-container {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.skill {
+    width: 100%;
+    max-width: 300px;
+    text-align: left;
+}
+
+.skill-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #1e90ff, #0d6efd);
+    transition: width 0.5s;
+}
+
+.projects-container {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    width: 95%;
+    max-width: 350px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    color: #1e90ff;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.profiles-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.profiles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.profile-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.profile-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.profile-card h3 {
+    font-size: 1.2rem;
+    color: #1e90ff;
+    margin-bottom: 0.5rem;
+}
+
+.profile-card a {
+    text-decoration: none;
+    color: #b5d0fa;
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #121212;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    color: #fff;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+footer {
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+footer .divider {
+    height: 1px;
+    background-color: #1e90ff;
+    width: 80%;
+    margin: 1rem auto;
+    opacity: 0.5;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer p a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer p a:hover {
+    color: #0d6efd;
+}
+
+.journey {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem 1rem;
+}
+
+.journey h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1e90ff;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 2px;
+    height: 100%;
+    background-color: #1e90ff;
+}
+
+.event {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.event:last-child {
+    margin-bottom: 0;
+}
+
+.event:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    background-color: #1e90ff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #000;
+}
+
+.event h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    color: #1e90ff;
+}
+
+.event p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.event span {
+    font-size: 0.8rem;
+    color: #888;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Initial hidden state */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.9s ease-out;
+}
+
+/* Visible state (triggered) */
+.animate.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .profiles-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-cv {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #121212;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        width: 200px;
+        border-radius: 5px;
+        padding: 1rem;
+        z-index: 999;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero .blob-container {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero .text-content {
+        text-align: center;
+    }
+}
