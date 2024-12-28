@@ -132,7 +132,7 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: url('./jai2.png') no-repeat center/cover;
+    background: url('https://i.ibb.co/Z1XQ78B/jai2.png') no-repeat center/cover;
     border: 3px solid rgb(58, 178, 211);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.316);
 }
